@@ -6,28 +6,31 @@ The goal of this project is to demystify Logistic Regression. While Linear Regre
 
 I implemented the following components to move from linear output to probability.
 
-The Sigmoid Function - to map any real-valued number into a range between 0 and 1:$$g(z) = \frac{1}{1 + e^{-z}}$$where $z = \mathbf{w} \cdot \mathbf{x} + b$.
+The Sigmoid Function - to map any real-valued number into a range between 0 and 1: $g(z) = \frac{1}{1 + e^{-z}}$ where $z = \mathbf{w} \cdot \mathbf{x} + b$.
 
 #### Cost Function:
 
-Log Loss - instead of MSE, I used Binary Cross-Entropy (Log Loss) with $L_2$ Regularization to penalize wrong classifications more heavily:$$J(\mathbf{w},b) = -\frac{1}{m} \sum_{i=0}^{m-1} \left[ y^{(i)} \log(f_{\mathbf{w},b}(\mathbf{x}^{(i)})) + (1 - y^{(i)}) \log(1 - f_{\mathbf{w},b}(\mathbf{x}^{(i)})) \right] + \frac{\lambda}{2m} \sum_{j=0}^{n-1} w_j^2$$
+Log Loss - instead of MSE, I used Binary Cross-Entropy (Log Loss) with $L_2$ Regularization: 
+
+$$J(\mathbf{w},b) = -\frac{1}{m} \sum_{i=0}^{m-1} \left[ y^{(i)} \log(f_{\mathbf{w},b}(\mathbf{x}^{(i)})) + (1 - y^{(i)}) \log(1 - f_{\mathbf{w},b}(\mathbf{x}^{(i)})) \right] + \frac{\lambda}{2m} \sum_{j=0}^{n-1} w_j^2$$
 
 #### Optimization
 
-The update rules for Gradient Descent look similar to Linear Regression, but the prediction $$f_{\mathbf{w},b}(\mathbf{x})$$now refers to the Sigmoid function:
+The update rules for Gradient Descent look similar to Linear Regression, but the prediction 
+$$f_{\mathbf{w},b}(\mathbf{x})$$ now refers to the Sigmoid function:
+
+
 $$\frac{\partial J(\mathbf{w},b)}{\partial w_j} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})x_j^{(i)} + \frac{\lambda}{m}w_j$$
 
 ### Project Structure
 
 ├── Linear_Regression/
 
-│ ├── data
+│ ├── breast_cancer.csv
 
 │ ├── main_plots/
 
-│ ├──linear_regression_from_scratch.ipynb
-
-| ├──lr_with_multiple_variables.ipynb
+│ ├──log_class.ipynb
 
 │ └── requirements.txt
 
