@@ -1,0 +1,15 @@
+# Core Numerical and Math
+numpy>=1.24.0
+
+# Data Analysis
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Splitings & Utilities
+scikit-learn>=1.2.0
+
+# Environment (Optional)
+jupyter>=1.0.0
